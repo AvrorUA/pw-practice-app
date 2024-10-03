@@ -32,3 +32,12 @@ test('parametrized methods', {tag: '@slow'}, async({page}) => {
     await pm.onDatePickerPage().selectCommonDatePickerDateFromToday(5)
     await pm.onDatePickerPage().selectDatePickerWithRangeFromToday(6, 15)
 })
+
+test.only('testing with argos ci', async({page}) => {
+    const pm = new PageManager(page)
+    await pm.navigateTo().formLayoutsPage()
+    await pm.navigateTo().datePickerPage()
+    await pm.navigateTo().smartTablePage()
+    await pm.navigateTo().toastrPage()
+    await pm.navigateTo().tooltipPage()
+})
